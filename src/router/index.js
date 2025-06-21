@@ -1,23 +1,17 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import LivroForm from '../components/LivroForm.vue'
-import LivroList from '../components/LivroList.vue'
-import ApiLivros from '../components/ApiLivros.vue'
+import Home from '../views/Home.vue'
+import ApiSearch from '../views/ApiSearch.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'ListaLivros',
-    component: LivroList
-  },
-  {
-    path: '/novo',
-    name: 'LivroForm',
-    component: LivroForm
+    name: 'Home',
+    component: Home
   },
   {
     path: '/api',
-    name: 'ApiLivros',
-    component: ApiLivros
+    name: 'ApiSearch',
+    component: ApiSearch
   }
 ]
 

@@ -64,9 +64,7 @@ const buscarLivros = async () => {
   if (!busca.value) return
 
   const resposta = await fetch(
-    `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(
-      busca.value
-    )}`
+    `https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(busca.value)}`
   )
   const dados = await resposta.json()
   livros.value = dados.items || []

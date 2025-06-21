@@ -1,18 +1,32 @@
 <template>
-  <div class="mb-8">
+  <div class="mb-8 bg-stone-900 p-6 rounded-lg">
     <form @submit.prevent="salvar">
       <div class="mb-4">
-        <input v-model="livro.titulo" type="text" placeholder="Título" class="border p-2 w-full"/>
+        <input
+          v-model="livro.titulo"
+          type="text"
+          placeholder="Título"
+          class="border border-white p-2 w-full rounded-md bg-transparent text-white"
+        />
       </div>
       <div class="mb-4">
-        <input v-model="livro.autor" type="text" placeholder="Autor" class="border p-2 w-full"/>
+        <input
+          v-model="livro.autor"
+          type="text"
+          placeholder="Autor"
+          class="border border-white p-2 w-full rounded-md bg-transparent text-white"
+        />
       </div>
-      <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">
+      <button
+        type="submit"
+        class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition"
+      >
         {{ livro.id ? 'Atualizar' : 'Adicionar' }}
       </button>
     </form>
   </div>
 </template>
+
 
 <script>
 export default {
