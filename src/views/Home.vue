@@ -7,6 +7,7 @@
 </template>
 
 <script>
+const API_URL = 'https://68573c9a21f5d3463e54c950.mockapi.io/api/v1/books';
 import LivroForm from '../components/LivroForm.vue'
 import LivroList from '../components/LivroList.vue'
 
@@ -20,7 +21,7 @@ export default {
   },
   methods: {
     async carregarLivros() {
-      const res = await fetch('http://localhost:3000/livros');
+      const res = await fetch(API_URL);
       this.livros = await res.json();
     },
     editarLivro(livro) {
