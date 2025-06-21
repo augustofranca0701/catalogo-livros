@@ -29,6 +29,8 @@
 
 
 <script>
+const API_URL = 'https://68573c9a21f5d3463e54c950.mockapi.io/api/v1/books';
+
 export default {
   props: ['livroEdit'],
   data() {
@@ -50,13 +52,13 @@ export default {
   methods: {
     async salvar() {
       if (this.livro.id) {
-        await fetch(`http://localhost:3000/livros/${this.livro.id}`, {
+        await fetch(`${API_URL}/${this.livro.id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(this.livro)
         });
       } else {
-        await fetch('http://localhost:3000/livros', {
+        await fetch(API_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(this.livro)
@@ -68,3 +70,4 @@ export default {
   }
 }
 </script>
+

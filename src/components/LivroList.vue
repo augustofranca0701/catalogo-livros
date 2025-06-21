@@ -39,11 +39,13 @@
 </template>
 
 <script>
+const API_URL = 'https://68573c9a21f5d3463e54c950.mockapi.io/api/v1/books';
+
 export default {
   props: ['livros'],
   methods: {
     async deletar(id) {
-      await fetch(`http://localhost:3000/livros/${id}`, { method: 'DELETE' });
+      await fetch(`${API_URL}/${id}`, { method: 'DELETE' });
       this.$emit('atualizar');
     }
   }
